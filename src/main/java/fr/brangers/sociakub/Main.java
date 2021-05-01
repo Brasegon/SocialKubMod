@@ -1,5 +1,7 @@
 package fr.brangers.sociakub;
 
+import fr.brangers.sociakub.init.registration.Registration;
+import fr.brangers.sociakub.init.registration.RegistrationBiomes;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
@@ -30,7 +32,7 @@ public class Main {
         // Register the doClientStuff method for modloading
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
-        //Registration.register();
+        Registration.init();
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -39,6 +41,7 @@ public class Main {
     {
         // some preinit code
         LOGGER.info("HELLO FROM PREINIT");
+        RegistrationBiomes.registerBiomes();
 
     }
 

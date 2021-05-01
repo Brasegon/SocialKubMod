@@ -92,7 +92,7 @@ public class SocialKubMainMenu extends Screen {
 
     protected void init() {
         if (this.splash == null) {
-            this.splash = this.minecraft.getSplashManager().getSplash();
+            this.splash = "SocialKub";
         }
 
         this.copyrightWidth = this.font.width("Copyright Mojang AB. Do not distribute!");
